@@ -1,0 +1,24 @@
+alias d=docker
+d pull httpd
+d run httpd
+d ps [-a]
+d run -p 8080:80 httpd
+curl http://192.168.99.100:8080
+d stop <id>
+d start <id>
+d rm -f <id>
+d run tomcat  => pull +run 
+
+creating image
+------------------
+d build -t eureka-server . 
+d run -p 8082:8080 eureka-server
+Linux, Windows container
+
+d run -p 8084:8081 eureka-server -d
+
+d build -t book-service -f Dockerfile1 .
+d rmi book-service/1.1
+
+d export <container_id>  > book-service.tar.gz
+d import book-service.tar.gz
